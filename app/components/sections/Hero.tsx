@@ -21,13 +21,13 @@ const HeroSection = () => {
             duration: 1,
             delay: 0.5,
         });
-        gsap.from(".hero-btn", {
-            scale: 0.8,
-            opacity: 0,
-            duration: 0.8,
-            delay: 0.6,
-            overwrite: "auto",
-        });
+        // gsap.from(".hero-btn", {
+        //     scale: 0.8,
+        //     opacity: 0,
+        //     duration: 0.8,
+        //     delay: 0.6,
+        //     overwrite: "auto",
+        // });
 
         gsap.from(".reveal-text", {
             yPercent: 100,

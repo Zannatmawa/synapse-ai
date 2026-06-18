@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroSection from './sections/Hero'
-// import FeaturesSection from './sections/Features'
+import FeaturesSection from './sections/Features'
 // import HowItWorksSection from './sections/HowItWorks'
 // import TestimonialsSection from './sections/Testimonials'
 // import PricingSection from './sections/Pricing'
@@ -10,8 +10,8 @@ const Main = () => {
     return (
         <>
             <HeroSection />
-            {/* <FeaturesSection />
-            <HowItWorksSection />
+            <FeaturesSection />
+            {/* <HowItWorksSection />
             <TestimonialsSection />
             <PricingSection />
             <CtaSection /> */}
