@@ -1,104 +1,150 @@
-// "use client";
+"use client";
 
-// import React, { useRef } from "react";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { useGSAP } from "@gsap/react";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
-// export default function FeaturesSection() {
-//     const sectionRef = useRef<HTMLDivElement>(null);
-//     const headerRef = useRef<HTMLDivElement>(null);
-//     const gridRef = useRef<HTMLDivElement>(null);
+export default function FeaturesSection() {
+    // const sectionRef = useRef<HTMLDivElement>(null);
+    // const headerRef = useRef<HTMLDivElement>(null);
+    // const gridRef = useRef<HTMLDivElement>(null);
 
-//     useGSAP(
-//         () => {
-//             if (!headerRef.current || !gridRef.current) return;
+    // useGSAP(
+    //     () => {
+    //         if (!headerRef.current || !gridRef.current) return;
 
-//             gsap.from(headerRef.current, {
-//                 y: 60,
-//                 opacity: 0,
-//                 duration: 1,
-//                 ease: "power3.out",
-//                 scrollTrigger: {
-//                     trigger: headerRef.current,
-//                     start: "top 85%",
-//                     toggleActions: "play none none reverse",
-//                     markers: true,
-//                 },
-//             });
+    //         gsap.from(headerRef.current, {
+    //             y: 60,
+    //             opacity: 0,
+    //             duration: 1,
+    //             ease: "power3.out",
+    //             scrollTrigger: {
+    //                 trigger: headerRef.current,
+    //                 start: "top 85%",
+    //                 toggleActions: "play none none reverse",
+    //                 markers: true,
+    //             },
+    //         });
 
-//             gsap.from(gridRef.current.querySelectorAll(".feature-card"), {
-//                 y: 80,
-//                 opacity: 0,
-//                 duration: 0.8,
-//                 stagger: 0.2,
-//                 ease: "power2.out",
-//                 scrollTrigger: {
-//                     trigger: gridRef.current,
-//                     start: "top 80%",
-//                     toggleActions: "play none none reverse",
-//                     markers: true,
-//                 },
-//             });
-//         },
-//         { scope: sectionRef }
-//     );
+    //         gsap.from(gridRef.current.querySelectorAll(".feature-card"), {
+    //             y: 80,
+    //             opacity: 0,
+    //             duration: 0.8,
+    //             stagger: 0.2,
+    //             ease: "power2.out",
+    //             scrollTrigger: {
+    //                 trigger: gridRef.current,
+    //                 start: "top 80%",
+    //                 toggleActions: "play none none reverse",
+    //                 markers: true,
+    //             },
+    //         });
+    //     },
+    //     { scope: sectionRef }
+    // );
 
-//     return (
-//         <section
-//             ref={sectionRef}
-//             className="py-24 px-6 max-w-7xl mx-auto w-full bg-transparent text-zinc-300"
-//         >
-//             <div ref={headerRef} className="text-center mb-20">
-//                 <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-100 mb-4">
-//                     Everything you need to scale operations
-//                 </h2>
-//                 <p className="text-zinc-400 max-w-xl mx-auto text-base md:text-lg">
-//                     Stop bouncing between fractured tools. Synapse AI unites your
-//                     operations under a single, highly predictive ecosystem.
-//                 </p>
-//             </div>
+    return (
+        <section className="py-24 px-6 w-full bg-transparent text-zinc-300 relative overflow-hidden">
 
-//             <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//                 <div className="feature-card group bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 rounded-2xl p-8 hover:border-teal-500/30 hover:bg-zinc-900/40 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-//                     <div className="w-12 h-12 bg-teal-500/10 text-teal-400 rounded-xl flex items-center justify-center mb-6 border border-teal-500/20 group-hover:scale-110 transition-transform duration-300">
-//                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
-//                             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" />
-//                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" />
-//                         </svg>
-//                     </div>
-//                     <h3 className="text-xl font-bold text-zinc-100 mb-3">Analyze Deep Data</h3>
-//                     <p className="text-zinc-400 text-sm leading-relaxed font-normal">
-//                         Drop in heavy databases or complex spreadsheets. Get comprehensive real-time visualizations and core anomaly updates instantly.
-//                     </p>
-//                 </div>
+            {/* Subtle atmospheric background light */}
+            <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-emerald-500/5 blur-[150px] rounded-full pointer-events-none select-none" />
 
-//                 <div className="feature-card group bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 rounded-2xl p-8 hover:border-emerald-500/30 hover:bg-zinc-900/40 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-//                     <div className="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform duration-300">
-//                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
-//                             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-//                         </svg>
-//                     </div>
-//                     <h3 className="text-xl font-bold text-zinc-100 mb-3">Automate Workflows</h3>
-//                     <p className="text-zinc-400 text-sm leading-relaxed font-normal">
-//                         Build complex multi-app chains instantly. Let AI trigger actions, follow custom business rules, and eliminate manual busywork background tasks.
-//                     </p>
-//                 </div>
+            <div className="max-w-7xl mx-auto">
 
-//                 <div className="feature-card group bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 rounded-2xl p-8 hover:border-cyan-500/30 hover:bg-zinc-900/40 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-//                     <div className="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center mb-6 border border-cyan-500/20 group-hover:scale-110 transition-transform duration-300">
-//                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
-//                             <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 21l8.982-11.795H13.19l.812-5.109L5 15.904h4.813Z" />
-//                         </svg>
-//                     </div>
-//                     <h3 className="text-xl font-bold text-zinc-100 mb-3">Generate Insights</h3>
-//                     <p className="text-zinc-400 text-sm leading-relaxed font-normal">
-//                         Walk into meetings with predictive answers. Receive high-level summaries and actionable growth options curated directly for your team ecosystem.
-//                     </p>
-//                 </div>
-//             </div>
-//         </section>
-//     );
-// }
+                {/* Section Header */}
+                <div className="text-center mb-20">
+                    <div className="text-emerald-400 font-mono text-xs tracking-widest uppercase mb-3">
+                        ✦ Core Capabilities
+                    </div>
+                    <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-zinc-100 mb-4">
+                        Engineered for speed, built for scale
+                    </h2>
+                    <p className="text-zinc-400 max-w-lg mx-auto text-base font-normal leading-relaxed">
+                        Unlock deep structural optimization tools with automated architectures configured to supercharge system processes.
+                    </p>
+                </div>
+
+                {/* Features Grid - 4 Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+
+                    {/* Card 1: Advanced Automation */}
+                    <div className="group flex flex-col justify-between p-6 bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 hover:border-zinc-700/80 rounded-2xl transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+                        <div>
+                            {/* Icon Container */}
+                            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-emerald-400 mb-5 group-hover:border-emerald-500/30 group-hover:bg-zinc-800/50 transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+                            </div>
+
+                            <h3 className="text-lg font-bold text-zinc-100 mb-2 group-hover:text-emerald-400 transition-colors duration-200">
+                                Task Automation
+                            </h3>
+                            <p className="text-zinc-400 text-sm leading-relaxed font-normal">
+                                Instantly deploy custom background triggers that coordinate multi-app system flows dynamically.
+                            </p>
+                        </div>
+                        <div className="mt-6 text-xs font-mono text-zinc-500 group-hover:text-zinc-400 transition-colors duration-200">
+                        </div>
+                    </div>
+
+                    {/* Card 2: Deep Analytics */}
+                    <div className="group flex flex-col justify-between p-6 bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 hover:border-zinc-700/80 rounded-2xl transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+                        <div>
+                            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-emerald-400 mb-5 group-hover:border-emerald-500/30 group-hover:bg-zinc-800/50 transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" /></svg>
+                            </div>
+
+                            <h3 className="text-lg font-bold text-zinc-100 mb-2 group-hover:text-emerald-400 transition-colors duration-200">
+                                Predictive Insights
+                            </h3>
+                            <p className="text-zinc-400 text-sm leading-relaxed font-normal">
+                                Isolate runtime bottlenecks and map incoming dataset matrices into real-time visual projections.
+                            </p>
+                        </div>
+                        <div className="mt-6 text-xs font-mono text-zinc-500 group-hover:text-zinc-400 transition-colors duration-200">
+                        </div>
+                    </div>
+
+                    {/* Card 3: Enterprise Security */}
+                    <div className="group flex flex-col justify-between p-6 bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 hover:border-zinc-700/80 rounded-2xl transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+                        <div>
+                            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-emerald-400 mb-5 group-hover:border-emerald-500/30 group-hover:bg-zinc-800/50 transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+                            </div>
+
+                            <h3 className="text-lg font-bold text-zinc-100 mb-2 group-hover:text-emerald-400 transition-colors duration-200">
+                                Secure Isolation
+                            </h3>
+                            <p className="text-zinc-400 text-sm leading-relaxed font-normal">
+                                Strict end-to-end multi-tenant security layers keeping your workspace configuration entirely localized.
+                            </p>
+                        </div>
+                        <div className="mt-6 text-xs font-mono text-zinc-500 group-hover:text-zinc-400 transition-colors duration-200">
+                        </div>
+                    </div>
+
+                    {/* Card 4: Global Integration */}
+                    <div className="group flex flex-col justify-between p-6 bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 hover:border-zinc-700/80 rounded-2xl transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+                        <div>
+                            <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-emerald-400 mb-5 group-hover:border-emerald-500/30 group-hover:bg-zinc-800/50 transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
+                            </div>
+
+                            <h3 className="text-lg font-bold text-zinc-100 mb-2 group-hover:text-emerald-400 transition-colors duration-200">
+                                Connected Arrays
+                            </h3>
+                            <p className="text-zinc-400 text-sm leading-relaxed font-normal">
+                                Link unified database clusters with third-party webhooks instantly via custom routing endpoints.
+                            </p>
+                        </div>
+                        <div className="mt-6 text-xs font-mono text-zinc-500 group-hover:text-zinc-400 transition-colors duration-200">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    );
+}
