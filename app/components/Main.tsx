@@ -3,8 +3,8 @@ import HeroSection from './sections/Hero'
 // import FeaturesSection from './sections/Features'
 import HowItWorksSection from './sections/HowItWorks'
 import TestimonialsSection from './sections/Testimonials'
-// import PricingSection from './sections/Pricing'
-// import CtaSection from './sections/CallToAction'
+import PricingSection from './sections/Pricing'
+import CtaSection from './sections/CallToAction'
 
 const Main = () => {
     return (
@@ -13,8 +13,8 @@ const Main = () => {
             {/* <FeaturesSection /> */}
             <HowItWorksSection />
             <TestimonialsSection />
-            {/* <PricingSection />
-            <CtaSection /> */}
+            <PricingSection />
+            <CtaSection />
 
         </>
     )
