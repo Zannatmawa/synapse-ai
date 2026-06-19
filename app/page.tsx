@@ -1,19 +1,24 @@
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
+import HeroSection from "./components/sections/Hero";
+import FeaturesSection from "./components/sections/Features";
+import HowItWorksSection from "./components/sections/HowItWorks";
+import TestimonialsSection from "./components/sections/Testimonials";
+import PricingSection from "./components/sections/Pricing";
+import CtaSection from "./components/sections/CallToAction";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-import Main from "./components/Main";
-import NavigationBar from "./components/sections/NavigationBar";
-import FooterSection from "./components/sections/Footer";
+
 
 export default function Home() {
   return (
     <div className="bg-[#090a0f]">
-      <NavigationBar />
-      <main >
-        <Main />
-      </main>
-      <FooterSection />
+      <HeroSection />
+      <FeaturesSection />
+      <HowItWorksSection />
+      <TestimonialsSection />
+      <PricingSection />
+      <CtaSection />
     </div>
   );
 }

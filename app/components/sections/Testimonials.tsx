@@ -3,7 +3,6 @@ import React from 'react'
 const TestimonialsSection = () => {
     return (
         <section className="py-24 px-6 max-w-7xl mx-auto w-full bg-transparent text-zinc-300">
-
             <div className="text-center mb-20">
                 <div className="text-emerald-400 font-mono text-xs tracking-widest uppercase mb-3">
                     ✦ Testimonials

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavigationBar from "./components/sections/NavigationBar";
+import FooterSection from "./components/sections/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +31,13 @@ export default function RootLayout({
       data-theme="synapseQuantum"
 
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="bg-[#090A0F] text-zinc-100 min-h-screen flex flex-col antialiased">
+        <NavigationBar />
+        <main className="flex-grow pt-20">
+          {children}
+        </main>
+        <FooterSection />
+      </body>
     </html>
   );
 }
