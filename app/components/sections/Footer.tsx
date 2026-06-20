@@ -7,7 +7,7 @@ const FooterSection = () => {
         <footer className="w-full bg-transparent text-zinc-400 pt-24 pb-12 px-6 border-t border-zinc-900/80 relative overflow-hidden">
 
             {/* Decorative industrial grid anchor background */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-zinc-800 to-transparent" />
 
             <div className="max-w-7xl mx-auto">
 
