@@ -62,18 +62,14 @@ const HeroSection = () => {
                     <div className="max-w-3xl flex flex-col items-center">
                         <div className="reveal-text inline-flex items-center gap-2 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 text-xs font-mono tracking-wider uppercase px-4 py-1.5 rounded-full mb-8 shadow-[0_0_15px_rgba(16,185,129,0.05)]">
                             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                            <span className="text-zinc-400">Trusted by 10,000+ professionals</span>
+                            <span className="text-zinc-400 ">Trusted by 10,000+ professionals</span>
                         </div>
-
-                        <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight text-zinc-100 leading-tight">
-                            <span className="hero-title-main inline-block">
-                                The AI Workspace That
-                            </span>{" "}
-                            <span className="hero-title-highlight inline-block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400">
-                                Thinks Ahead
+                        <h1 className="hero-title-main text-5xl md:text-7xl font-extrabold text-zinc-100 tracking-tight mt-4 mb-6">
+                            The AI Workspace That <br />
+                            <span className="hero-title-highlight  font-serif font-normal italic text-emerald-400 low-case tracking-normal px-2">
+                                thinks ahead
                             </span>
                         </h1>
-
                         <p className="hero-text py-6 text-base md:text-lg text-zinc-400 max-w-xl leading-relaxed font-normal">
                             Automate workflows, analyze data, and generate insights with an AI assistant designed for modern teams.
                         </p>
