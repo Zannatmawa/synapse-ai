@@ -3,8 +3,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import Link from 'next/link'; // or 'react-router-dom' depending on your setup
-import React from 'react';
+import Link from 'next/link';
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -26,13 +25,11 @@ const NavigationBar = () => {
             }
         });
     });
-
-    // Centralized route definition for clean parsing
     const navLinks = [
         { label: "Features", href: "/features" },
-        { label: "Solutions", href: "/solutions" },
         { label: "Pricing", href: "/pricing" },
         { label: "Testimonials", href: "/testimonials" },
+        { label: "Contact", href: "/contacts" },
     ];
 
     return (

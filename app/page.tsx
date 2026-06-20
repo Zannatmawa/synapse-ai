@@ -1,12 +1,10 @@
 "use client";
-
-import React, { useRef } from "react";
 import HeroSection from "./components/sections/Hero";
-import FeaturesSection from "./components/sections/Features";
 import HowItWorksSection from "./components/sections/HowItWorks";
-import TestimonialsSection from "./components/sections/Testimonials";
-import PricingSection from "./components/sections/Pricing";
 import CtaSection from "./components/sections/CallToAction";
+import FeaturesSection from "./features/page";
+import PricingSection from "./pricing/page";
+import TestimonialsSection from "./testimonials/page";
 
 
 
