@@ -2,6 +2,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 import Link from 'next/link'; // or 'react-router-dom' depending on your setup
 import React from 'react';
 
@@ -37,8 +38,6 @@ const NavigationBar = () => {
     return (
         <div className="nav-container fixed top-0 left-0 right-0 z-50 bg-transparent text-zinc-300 border-b border-transparent transition-all duration-300 px-6 h-20 flex items-center">
             <div className="w-full max-w-7xl mx-auto flex items-center justify-between">
-
-                {/* Left Side: Brand & Mobile Menu */}
                 <div className="flex items-center gap-2">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden p-2 text-zinc-300 hover:bg-zinc-900/50">
@@ -58,13 +57,20 @@ const NavigationBar = () => {
                         </ul>
                     </div>
 
-                    {/* Brand Identifier Link */}
-                    <Link href="/" className="text-xl font-black tracking-tight text-zinc-100 hover:opacity-90 transition-opacity">
-                        Synapse AI
+                    <Link
+                        href="/"
+                        className="flex items-center gap-3 hover:opacity-90 transition-opacity"
+                    >
+                        <Image
+                            src="/logo.png"
+                            alt="Synapse AI Logo"
+                            width={220}
+                            height={220}
+                            priority
+                        />
+
                     </Link>
                 </div>
-
-                {/* Desktop Navigation Link Cluster */}
                 <div className="hidden lg:flex items-center">
                     <ul className="flex items-center gap-8 text-sm font-medium tracking-wide">
                         {navLinks.map((link) => (
@@ -77,7 +83,6 @@ const NavigationBar = () => {
                     </ul>
                 </div>
 
-                {/* Primary Call to Action Button */}
                 <div>
                     <Link href="/register" className="h-10 px-5 flex items-center justify-center rounded-xl font-medium text-zinc-950 bg-emerald-400 hover:bg-emerald-300 transition-all duration-300 shadow-[0_0_25px_rgba(16,185,129,0.2)] text-sm tracking-wide">
                         Start Free Trial
