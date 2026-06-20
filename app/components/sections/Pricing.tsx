@@ -11,11 +11,12 @@ const PricingSection = () => {
     const containerRef = useRef(null);
 
     useGSAP(() => {
+        // Headings & Toggle animations
         gsap.from(".pricing-badge", {
-            y: 15,
+            y: 20,
             opacity: 0,
-            duration: 0.4,
-            ease: "power2.out",
+            duration: 0.5,
+            ease: "power3.out",
             scrollTrigger: {
                 trigger: ".pricing-wrapper",
                 start: "top 85%",
@@ -23,10 +24,10 @@ const PricingSection = () => {
         });
 
         gsap.from(".pricing-title", {
-            y: 20,
+            y: 30,
             opacity: 0,
-            duration: 0.5,
-            delay: 0.05,
+            duration: 0.6,
+            delay: 0.1,
             ease: "power3.out",
             scrollTrigger: {
                 trigger: ".pricing-wrapper",
@@ -35,11 +36,11 @@ const PricingSection = () => {
         });
 
         gsap.from(".pricing-desc", {
-            y: 15,
+            y: 20,
             opacity: 0,
-            duration: 0.5,
-            delay: 0.1,
-            ease: "power2.out",
+            duration: 0.6,
+            delay: 0.2,
+            ease: "power3.out",
             scrollTrigger: {
                 trigger: ".pricing-wrapper",
                 start: "top 85%",
@@ -49,32 +50,36 @@ const PricingSection = () => {
         gsap.from(".pricing-toggle-area", {
             scale: 0.95,
             opacity: 0,
-            duration: 0.4,
-            delay: 0.15,
-            ease: "back.out(1.5)",
+            duration: 0.5,
+            delay: 0.25,
+            ease: "power2.out",
             scrollTrigger: {
                 trigger: ".pricing-wrapper",
                 start: "top 85%",
             }
         });
 
-        gsap.from(".single-pricing-tier", {
-            rotationX: -25,
-            y: 40,
-            transformOrigin: "bottom center",
+        // FIXED CARDS ANIMATION
+        // We use a clean target selector array and clear properties after completion
+        gsap.from(containerRef.current.querySelectorAll(".single-pricing-tier"), {
+            y: 50,
+            scale: 0.95,
             opacity: 0,
-            duration: 0.45,
-            stagger: 0.08,
-            ease: "power2.out",
+            duration: 0.6,
+            stagger: 0.15,
+            ease: "power3.out",
+            immediateRender: false, // Prevents elements hiding before ScrollTrigger kicks in
+            clearProps: "transform,opacity", // Strips GSAP styles after running so Tailwind takes back over
             scrollTrigger: {
                 trigger: ".pricing-cards-container",
                 start: "top 85%",
+                toggleActions: "play none none none" // Ensures it triggers cleanly once
             }
         });
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="pricing-wrapper py-24 px-6 w-full bg-transparent text-zinc-300 [perspective:1200px]">
+        <section ref={containerRef} className="pricing-wrapper py-24 px-6 w-full bg-transparent text-zinc-300">
             <div className="max-w-7xl mx-auto">
 
                 <div className="text-center mb-16">
@@ -109,7 +114,7 @@ const PricingSection = () => {
 
                 <div className="pricing-cards-container grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
 
-                    {/* Tier 1: Starter (Added relative) */}
+                    {/* Tier 1: Starter */}
                     <div className="single-pricing-tier relative flex flex-col justify-between p-8 bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 rounded-2xl hover:border-zinc-700 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
                         <div>
                             <h3 className="text-xl font-bold text-zinc-100 mb-2">Starter</h3>
@@ -187,7 +192,7 @@ const PricingSection = () => {
                         </div>
                     </div>
 
-                    {/* Tier 3: Enterprise (Added relative) */}
+                    {/* Tier 3: Enterprise */}
                     <div className="single-pricing-tier relative flex flex-col justify-between p-8 bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 rounded-2xl hover:border-zinc-700 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
                         <div>
                             <h3 className="text-xl font-bold text-zinc-100 mb-2">Enterprise</h3>
