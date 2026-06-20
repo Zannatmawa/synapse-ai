@@ -8,54 +8,31 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function FeaturesSection() {
-    // const sectionRef = useRef<HTMLDivElement>(null);
-    // const headerRef = useRef<HTMLDivElement>(null);
-    // const gridRef = useRef<HTMLDivElement>(null);
+    useGSAP(() => {
+        const steps = document.querySelectorAll(".features-card");
 
-    // useGSAP(
-    //     () => {
-    //         if (!headerRef.current || !gridRef.current) return;
-
-    //         gsap.from(headerRef.current, {
-    //             y: 60,
-    //             opacity: 0,
-    //             duration: 1,
-    //             ease: "power3.out",
-    //             scrollTrigger: {
-    //                 trigger: headerRef.current,
-    //                 start: "top 85%",
-    //                 toggleActions: "play none none reverse",
-    //                 markers: true,
-    //             },
-    //         });
-
-    //         gsap.from(gridRef.current.querySelectorAll(".feature-card"), {
-    //             y: 80,
-    //             opacity: 0,
-    //             duration: 0.8,
-    //             stagger: 0.2,
-    //             ease: "power2.out",
-    //             scrollTrigger: {
-    //                 trigger: gridRef.current,
-    //                 start: "top 80%",
-    //                 toggleActions: "play none none reverse",
-    //                 markers: true,
-    //             },
-    //         });
-    //     },
-    //     { scope: sectionRef }
-    // );
-
+        gsap.from(steps, {
+            y: 80,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.25,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".feature-wrapper",
+                start: "top 80%",
+                toggleActions: "play none none reverse",
+            },
+        });
+    }, []);
     return (
-        <section className="py-24 px-6 w-full bg-transparent text-zinc-300 relative overflow-hidden">
+        <section className="feature-wrapper py-24 px-6 w-full bg-transparent text-zinc-300 relative overflow-hidden">
 
             {/* Subtle atmospheric background light */}
             <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-emerald-500/5 blur-[150px] rounded-full pointer-events-none select-none" />
 
             <div className="max-w-7xl mx-auto">
-
                 {/* Section Header */}
-                <div className="text-center mb-20">
+                <div className="features-card text-center mb-20">
                     <div className="text-emerald-400 font-mono text-xs tracking-widest uppercase mb-3">
                         ✦ Core Capabilities
                     </div>
@@ -68,7 +45,7 @@ export default function FeaturesSection() {
                 </div>
 
                 {/* Features Grid - 4 Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                <div className="features-card grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
 
                     {/* Card 1: Advanced Automation */}
                     <div className="group flex flex-col justify-between p-6 bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 hover:border-zinc-700/80 rounded-2xl transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">

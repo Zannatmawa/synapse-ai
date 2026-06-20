@@ -1,9 +1,27 @@
-import React from 'react'
+"use client";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const TestimonialsSection = () => {
+    useGSAP(() => {
+        const steps = document.querySelectorAll(".testimonials-card");
+
+        gsap.from(steps, {
+            y: 80,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.25,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".testimonials-wrapper",
+                start: "top 80%",
+                toggleActions: "play none none reverse",
+            },
+        });
+    }, []);
     return (
-        <section className="py-24 px-6 max-w-7xl mx-auto w-full bg-transparent text-zinc-300">
-            <div className="text-center mb-20">
+        <section className="testimonials-wrapper py-24 px-6 max-w-7xl mx-auto w-full bg-transparent text-zinc-300">
+            <div className="testimonials-card text-center mb-20">
                 <div className="text-emerald-400 font-mono text-xs tracking-widest uppercase mb-3">
                     ✦ Testimonials
                 </div>
@@ -15,7 +33,7 @@ const TestimonialsSection = () => {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="testimonials-card grid grid-cols-1 md:grid-cols-3 gap-8">
 
                 <div className="group flex flex-col justify-between p-8 bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 rounded-2xl hover:border-zinc-700 hover:bg-zinc-900/40 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
                     <div>
