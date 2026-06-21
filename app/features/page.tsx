@@ -162,6 +162,8 @@ import React, { useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
+import GridBackground from '../components/GridBackground'
+import Aurora from '../components/Aurora'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -184,6 +186,7 @@ const FeaturesBento = () => {
 
     return (
         <section ref={containerRef} className="py-24 px-6 max-w-7xl mx-auto w-full bg-transparent text-zinc-300">
+            <GridBackground />
             <div className="mb-12">
                 <span className="text-emerald-400 font-mono text-xs tracking-widest uppercase">// CORE ARCHITECTURE</span>
                 <h2 className="text-3xl md:text-5xl font-extrabold text-zinc-100 mt-2 tracking-tight">Engineered for speed</h2>
