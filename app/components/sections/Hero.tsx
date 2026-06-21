@@ -4,6 +4,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useRef } from 'react';
 import Aurora from '../Aurora';
+import GridBackground from '../GridBackground';
+import SportLight from '../SportLight';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,10 +56,19 @@ const HeroSection = () => {
             delay: 1.2,
             ease: "power4.out"
         });
+        gsap.to(".stats-card", {
+            y: -10,
+            duration: 2.5,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+        });
     }, { scope: container });
 
     return (
         <div ref={container} className="relative overflow-hidden flex flex-col min-h-screen bg-zinc-950 overflow-hidden text-zinc-300">
+            <GridBackground />
+            <SportLight />
             <Aurora />
             <div className="flex-grow flex items-center justify-center py-20 px-4 relative z-10">
                 <div className="text-center">

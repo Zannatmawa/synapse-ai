@@ -69,6 +69,12 @@ const PricingSection = () => {
                 start: "top 85%",
             }
         });
+        gsap.to(".popular-plan", {
+            boxShadow: "0 0 40px rgba(0,255,180,.4)",
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+        });
     }, { scope: containerRef });
 
     return (
@@ -107,7 +113,7 @@ const PricingSection = () => {
 
                 <div className="pricing-cards-container grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
 
-                    <div className="single-pricing-tier relative flex flex-col justify-between p-8 bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 rounded-2xl hover:border-zinc-700 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+                    <div className="single-pricing-tier popular-plan relative flex flex-col justify-between p-8 bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 rounded-2xl hover:border-zinc-700 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
                         <div>
                             <h3 className="text-xl font-bold text-zinc-100 mb-2">Starter</h3>
                             <p className="text-zinc-400 text-sm mb-6 leading-relaxed">Perfect for individuals and small teams getting started with AI.</p>
@@ -143,7 +149,7 @@ const PricingSection = () => {
                         </div>
                     </div>
 
-                    <div className="single-pricing-tier relative flex flex-col justify-between p-8 bg-zinc-900/40 backdrop-blur-md border-2 border-emerald-500/50 rounded-2xl shadow-[0_20px_40px_rgba(16,185,129,0.1)]">
+                    <div className="single-pricing-tier popular-plan relative flex flex-col justify-between p-8 bg-zinc-900/40 backdrop-blur-md border-2 border-emerald-500/50 rounded-2xl shadow-[0_20px_40px_rgba(16,185,129,0.1)]">
                         <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-zinc-950 text-[10px] font-mono font-bold px-3 py-1 rounded-md uppercase tracking-widest whitespace-nowrap shadow-md">
                             Most Popular
                         </div>
@@ -183,7 +189,7 @@ const PricingSection = () => {
                         </div>
                     </div>
 
-                    <div className="single-pricing-tier relative flex flex-col justify-between p-8 bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 rounded-2xl hover:border-zinc-700 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+                    <div className="single-pricing-tier popular-plan relative flex flex-col justify-between p-8 bg-zinc-900/20 backdrop-blur-md border border-zinc-800/60 rounded-2xl hover:border-zinc-700 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
                         <div>
                             <h3 className="text-xl font-bold text-zinc-100 mb-2">Enterprise</h3>
                             <p className="text-zinc-400 text-sm mb-6 leading-relaxed">Custom features and strict security controls for organizations.</p>

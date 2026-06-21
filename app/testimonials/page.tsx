@@ -18,6 +18,13 @@ const TestimonialsSection = () => {
                 toggleActions: "play none none reverse",
             },
         });
+        gsap.to(".testimonials-card", {
+            y: -10,
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            stagger: 0.3,
+        });
     }, []);
     return (
         <section className="testimonials-wrapper py-24 px-6 max-w-7xl mx-auto w-full bg-transparent text-zinc-300">
