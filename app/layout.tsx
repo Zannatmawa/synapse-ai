@@ -4,7 +4,6 @@ import "./globals.css";
 import NavigationBar from "./components/sections/NavigationBar";
 import FooterSection from "./components/sections/Footer";
 import { Plus_Jakarta_Sans, Playfair_Display, Space_Mono } from 'next/font/google';
-import AmbientBackground from "./components/AmbientBackground";
 
 const sansFont = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -50,7 +49,6 @@ export default function RootLayout({
 
     >
       <body className="font-sans bg-zinc-950 text-zinc-300 antialiased">
-        <AmbientBackground />
         <NavigationBar />
         <main className="flex-grow pt-20">
           {children}

@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useRef } from 'react';
+import Aurora from '../Aurora';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,7 +57,8 @@ const HeroSection = () => {
     }, { scope: container });
 
     return (
-        <div ref={container} className="relative flex flex-col min-h-screen bg-zinc-950 overflow-hidden text-zinc-300">
+        <div ref={container} className="relative overflow-hidden flex flex-col min-h-screen bg-zinc-950 overflow-hidden text-zinc-300">
+            <Aurora />
             <div className="flex-grow flex items-center justify-center py-20 px-4 relative z-10">
                 <div className="text-center">
                     <div className="max-w-3xl flex flex-col items-center">
