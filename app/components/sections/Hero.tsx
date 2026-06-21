@@ -66,11 +66,11 @@ const HeroSection = () => {
     }, { scope: container });
 
     return (
-        <div ref={container} className="relative overflow-hidden flex flex-col min-h-screen bg-zinc-950 overflow-hidden text-zinc-300">
+        <div ref={container} className="relative  flex flex-col min-h-screen bg-zinc-950 overflow-hidden text-zinc-300">
             <GridBackground />
             <SportLight />
             <Aurora />
-            <div className="flex-grow flex items-center justify-center py-20 px-4 relative z-10">
+            <div className="grow flex items-center justify-center py-20 px-4 relative z-10">
                 <div className="text-center">
                     <div className="max-w-3xl flex flex-col items-center">
                         <div className="reveal-text inline-flex items-center gap-2 bg-zinc-900/60 backdrop-blur-md border border-zinc-800 text-xs font-mono tracking-wider uppercase px-4 py-1.5 rounded-full mb-8 shadow-[0_0_15px_rgba(16,185,129,0.05)]">

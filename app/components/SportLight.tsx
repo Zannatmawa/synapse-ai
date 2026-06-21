@@ -27,7 +27,7 @@ const Spotlight = () => {
     return (
         <div
             ref={spotlightRef}
-            className="pointer-events-none absolute left-0 top-0 h-[600px] w-[600px] rounded-full bg-emerald-400/10 blur-[180px]"
+            className="pointer-events-none absolute left-0 top-0 h-150 w-150 rounded-full bg-emerald-400/10 blur-[180px]"
         />
     );
 };

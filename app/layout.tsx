@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "./components/sections/NavigationBar";
 import FooterSection from "./components/sections/Footer";
@@ -21,15 +20,6 @@ const technicalMono = Space_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
 });
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: 'Synapse AI Workspace',
@@ -44,13 +34,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${sansFont.variable} ${accentSerif.variable} ${technicalMono.variable}`}
-      // className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       data-theme="synapseQuantum"
 
     >
       <body className="font-sans bg-zinc-950 text-zinc-300 antialiased">
         <NavigationBar />
-        <main className="flex-grow pt-20">
+        <main className="grow pt-20">
           {children}
         </main>
         <FooterSection />
